@@ -8,9 +8,10 @@ async function getPersonajes(){ // a) Recuperar la información de todos los per
          console.log(`Error!`);
     }else{ //si no es error, entonces devuelve la respuesta en formato json
         //immprimimos la respuesta
-        console.log("Todos los personajes:");
-        const personajes = await respuesta.json();
-        console.log(personajes);
+       // console.log("Todos los personajes:");
+        return await respuesta.json();
+        //console.log(personajes);
+        
     }
    }catch(error){
     console.log(`Error! ${error}`); 

@@ -13,25 +13,33 @@ Consigna
     
 */
 var api = require ('./api.js');
-//a) Recuperar la información de todos los personajes (GET).
-api.getPersonajes();
+var fs = require('fs').promises; 
 
-// b) Agregar un nuevo personaje (POST).
-const nuevoPersonaje = {
-    "id": 99,
-    "firstName": "Harry", 
-    "lastName": "potter",
-    "fullName": "El niño que vivió",
-    "title": "mago",
-    "family": "huerfano",
-    "image": "harry.jpg",
-    "imageUrl": "https://thronesapi.com/assets/images/harry.jpg"
-}  
+async function main() {
+  try {
+    //a) Recuperar la información de todos los personajes (GET).
+    const personajes = await api.getPersonajes(); 
+    console.log('Todos los personajes:');
+    console.log(personajes);
 
-api.agregarPersonaje(nuevoPersonaje);
-// c) Buscar la información de un determinado personaje, utilizando un “id” como parámetro (GET).
-api.buscarPersonaje(1);
+    
+    // b) Agregar un nuevo personaje (POST).
+    const nuevoPersonaje = {
+        "id": 99,
+        "firstName": "Harry", 
+        "lastName": "potter",
+        "fullName": "El niño que vivió",
+        "title": "mago",
+        "family": "huerfano",
+        "image": "harry.jpg",
+        "imageUrl": "https://thronesapi.com/assets/images/harry.jpg"
+    }  
 
+    api.agregarPersonaje(nuevoPersonaje);
+    // c) Buscar la información de un determinado personaje, utilizando un “id” como parámetro (GET).
+    api.buscarPersonaje(1);
+    //d) Persistir los datos de la primer consulta en un archivo local JSON.
+    await fs.writeFile('./personajes.json', JSON.stringify(personajes));
 
 /**2 - Utilizando el archivo creado en el punto anterior:
     a) Agregar un personaje al final del archivo.
@@ -46,3 +54,9 @@ api.buscarPersonaje(1);
      Realizar funciones individuales para cada punto.
      Utilizar sintaxis Aync/Await, la forma más moderna para el uso de la asincronía.
      Manejar de excepciones, bloques try...catch */
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+main();
