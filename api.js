@@ -1,6 +1,8 @@
 const url = 'https://thronesapi.com/api/v2/Characters';
 
-
+//  Utilizando el API https://thronesapi.com/ realizar las siguientes tareas:
+//      swagger (https://thronesapi.com/swagger/index.html?urls.primaryName=Game%20of%20Thrones%20API%20v2)
+   
 async function getPersonajes(){ // a) Recuperar la información de todos los personajes (GET).
    try{
     const respuesta = await fetch(url);
