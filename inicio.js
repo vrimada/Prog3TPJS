@@ -26,7 +26,7 @@ async function main() {
     //a) Recuperar la información de todos los personajes (GET).
     const personajes = await api.getPersonajes(); 
     console.log('Todos los personajes:');
-   // console.log(personajes);
+    console.log(personajes);
 
     
     // b) Agregar un nuevo personaje (POST).
