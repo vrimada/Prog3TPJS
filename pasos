@@ -1,0 +1,11 @@
+Pasos para la creacion del package.json
+npm init --> cuando pregunta el "type" poner "module"
+npm install
+npm install express
+
+En index.js exportamos express
+
+Cuando da error: SyntaxError: Cannot use import statement outside a module -->  Es porque en el package json no esta el type:module
+
+Primer entrega:
+Tener hecho un CRUD completo de alguna tabla especialidad/paciente/medico

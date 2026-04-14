@@ -1,20 +1,16 @@
 {
-  "name": "prog3tp1",
+  "name": "prog3",
   "version": "1.0.0",
-  "main": "inicio.js",
-  "scripts": {
-      "start": "node inicio.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vrimada/Prog3TP1.git"
-  },
-  "author": "Grupo AA",
+  "description": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vrimada/Prog3TP1/issues"
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
-  "homepage": "https://github.com/vrimada/Prog3TP1#readme",
-  "description": ""
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
